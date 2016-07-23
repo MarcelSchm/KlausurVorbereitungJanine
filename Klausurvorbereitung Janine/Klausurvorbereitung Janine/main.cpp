@@ -169,7 +169,7 @@ int main() {
 	/////////////////////PRIMZAHLEN//////////////////////////////////////////
 	int abfrage = 0; //vom Benutzer festzulegen
 	int zaehler = 0; // zählt die anzahl der primzahlen
-	int aktuelleZahl = 1; //aktuelle zu prüfende Zahl
+	int aktuelleZahl = 2; //aktuelle zu prüfende Zahl
 	int divisor = 2; // Zahl mit der geprüft wird, ob von zwei bis aktuelle zahl teilbar
 	bool primzahl = true;
 	cout<<"wieviele Primzahlen wollen Sie haben?  ";
