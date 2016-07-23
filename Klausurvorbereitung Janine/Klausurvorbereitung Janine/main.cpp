@@ -145,9 +145,7 @@ double capital(Article articles[], int number, string pl) {
 
 }
 
-int main() {
-	//aufgabe1b();
-	//aufgabe2();
+void aufgabe3() {
 	Article art1;
 	Article art2(art1.getPrice(), art1.getAmount(), art1.getPlace(), "Stift");
 	cout << "Artikel1" << art1.toString() << endl;
@@ -155,13 +153,45 @@ int main() {
 	if (true == art1.subtract(art2)) {
 		cout << "art1: " << art1.toString();
 	}
-	else cout << endl<< "Keine Subtraktion möglich";
+	else cout << endl << "Keine Subtraktion möglich";
 	////////////////Aufgabenteil e /////////////////////////////
 	int n = 0;
 	cout << "Anzahl Artikel eingeben: ";
 	cin >> n;
 	Article *warehouse = new Article[n];
-	cout<<"Gesamtkaptial in MD: "<<capital(warehouse, n, "MD")<<endl;
+	cout << "Gesamtkaptial in MD: " << capital(warehouse, n, "MD") << endl;
+}
+int main() {
+	//aufgabe1b();
+	//aufgabe2();
+	//aufgabe3();
+
+	/////////////////////PRIMZAHLEN//////////////////////////////////////////
+	int abfrage = 0; //vom Benutzer festzulegen
+	int zaehler = 0; // zählt die anzahl der primzahlen
+	int aktuelleZahl = 1; //aktuelle zu prüfende Zahl
+	int divisor = 2; // Zahl mit der geprüft wird, ob von zwei bis aktuelle zahl teilbar
+	bool primzahl = true;
+	cout<<"wieviele Primzahlen wollen Sie haben?  ";
+	cin >> abfrage;
+	cout << endl;
+	while (zaehler<abfrage) { // bis genügend primzahlen gefunden wurden
+		primzahl = true;
+		divisor = 2;
+		while (divisor < aktuelleZahl) { // von 2 bis aktuelle zahl teilen, wenn nicht teilbar dann primzahl
+
+			if (aktuelleZahl%divisor == 0) {
+				primzahl = false;
+			}
+			divisor++; //nächster divisor, bis aktuelle zahl erreicht
+		}
+		if (true == primzahl) {
+			cout << aktuelleZahl << " ";
+			zaehler++;
+		}
+
+		aktuelleZahl++; //nächste Zahl
+	}
 	
 	system("pause");
 	return 0;
